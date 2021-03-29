@@ -2,6 +2,7 @@
 const express = require ('express')
 const handlebars = require ('express-handlebars')
 const bodyParse = require ('body-parser')
+const admin = require ('./routes/admin')
 
 const app = express()
 //Configurações
@@ -12,7 +13,7 @@ const app = express()
         app.engine('handlebars', handlebars({defaultLayout:'main'}))
         app.set('view engine' , 'handlebars')
 // Rotas 
-    
+    app.use('/' , admin)
 //Outros
 const PORT = 8081
 
